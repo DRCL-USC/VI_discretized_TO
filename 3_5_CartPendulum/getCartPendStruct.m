@@ -1,4 +1,4 @@
-function [nx, robotStruct, robotParams] = getCartPoleStruct()
+function [nx, robotStruct, robotParams] = getCartPendStruct()
 %An initialization function that returns the robotStruct data structure
 %containing the structure of the A1 Quadruped Robot
 %nx is the number of generalized coordinates present in this model
@@ -16,12 +16,11 @@ function [nx, robotStruct, robotParams] = getCartPoleStruct()
 %% System Parameters
 
 mCart = 1;
-mPole = 1;
+mPole = 0.2;
 hCart = 0.3;
 lCart = 0.4;
 dCart = 0.1;
-lPole = 1;
-R = 0.03; % Radius of Cylindrical Pendula (for Izz)
+lPole = 0.3;
 
 %% Create robotStruct structure
 nx = 2;
@@ -53,7 +52,7 @@ robotStruct.Pivot.type = "Joint";
 robotStruct.Pivot.parent = "Cart";
 robotStruct.Pivot.location = [0; 0; 0];
 robotStruct.Pivot.angle = q(2);
-robotStruct.Pivot.axis = [0;1;0];
+robotStruct.Pivot.axis = [0;-1;0];
 robotStruct.Pivot.output = 0;
 
 robotStruct.Pole.type = "Mass";
@@ -67,7 +66,6 @@ robotStruct.Pole.output = 1;
 
 %% Useful Robot Parameters
 robotParams.lPole = lPole;
-robotParams.R = R;
 robotParams.lCart = lCart;
 robotParams.hCart = hCart;
 robotParams.dCart = dCart;

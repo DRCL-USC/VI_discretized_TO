@@ -45,7 +45,7 @@ robotStruct.CartCG.type = "Mass";
 robotStruct.CartCG.parent = "Cart";
 robotStruct.CartCG.location = [0; 0; 0];
 robotStruct.CartCG.mass = mCart;
-robotStruct.CartCG.MoI = [0, 0, 0];
+robotStruct.CartCG.MoI = [(1/12)*mCart*(hCart^2+dCart^2), (1/12)*mCart*(hCart^2+lCart^2), (1/12)*mCart*(lCart^2+dCart^2)];
 robotStruct.CartCG.PoI = [0, 0, 0];
 robotStruct.CartCG.output = 0;
 
@@ -58,12 +58,18 @@ robotStruct.Pivot.output = 0;
 
 robotStruct.Pole.type = "Mass";
 robotStruct.Pole.parent = "Pivot";
-robotStruct.Pole.location = [0; 0; lPole];
+robotStruct.Pole.location = [0; 0; -lPole/2];
 robotStruct.Pole.mass = mPole;
-robotStruct.Pole.MoI = [0, 0, 0];
+robotStruct.Pole.MoI = [(1/12)*mPole*(3*R^2+lPole^2), (1/12)*mPole*(3*R^2+lPole^2), (1/2)*mPole*R^2];
 robotStruct.Pole.PoI = [0, 0, 0];
-robotStruct.Pole.output = 1;
+robotStruct.Pole.output = 0;
 
+robotStruct.Tip.type = "Joint";
+robotStruct.Tip.parent = "Pivot";
+robotStruct.Tip.location = [0; 0; -lPole];
+robotStruct.Tip.angle = 0;
+robotStruct.Tip.axis = [0;1;0];
+robotStruct.Tip.output = 1;
 
 %% Useful Robot Parameters
 robotParams.lPole = lPole;
