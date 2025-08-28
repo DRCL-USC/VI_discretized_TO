@@ -9,13 +9,9 @@ Video: https://www.youtube.com/watch?v=z4HzWtGu9RM
 ## How to cite
 ```
 @inproceedings{VI_discretized_TO,
-
   title={High Accuracy Aerial Maneuvers on Legged Robots using Variational Integrator Discretized Trajectory Optimization},
-
   author={Scott Beck, Chuong Nguyen, Thai Duong, Nikolay Atanasov, Quan Nguyen},
-
   booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
-
   year={2025}
 }
 ```
