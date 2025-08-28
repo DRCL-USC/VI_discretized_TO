@@ -1,7 +1,9 @@
 ## VI_discretized_TO
 
 This work is presented at ICRA 2025.
+
 Paper: https://erl.ucsd.edu/ref/BeckNguyen_VITO_ICRA25.pdf
+
 Video: https://www.youtube.com/watch?v=z4HzWtGu9RM
 
 ## How to cite
